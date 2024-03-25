@@ -2,10 +2,11 @@ import taipeiClinic from "../datas/taipeiClinic.json";
 import newTaipeiClinic from "../datas/newTaipeiClinic.json";
 import chayiClinic from "../datas/chayiClinic.json";
 import miaoliClinic from "../datas/miaoliClinic.json";
+import { getTitleWithSlice } from "@/helpers/getTitleWithSlice";
 
-export const getTaipeiClinic = async () => {
+export const getTaipeiClinic = () => {
   try {
-    const res = await taipeiClinic;
+    const res = taipeiClinic;
     const datas = res.map((data) => {
       return {
         name: data["動物醫院名稱"],
@@ -19,9 +20,9 @@ export const getTaipeiClinic = async () => {
   }
 };
 
-export const getNewTaipeiClinic = async () => {
+export const getNewTaipeiClinic = () => {
   try {
-    const res = await newTaipeiClinic;
+    const res = newTaipeiClinic;
     const datas = res.map((data) => {
       const { name, address, tel } = data;
       return {
@@ -55,12 +56,17 @@ export const getHsinchuClinic = async () => {
   }
 };
 
-export const getChayiClinic = async () => {
+export const getChayiClinic = () => {
   try {
-    const res = await fetch(
-      "https://s5.aconvert.com/convert/p3r68-cdx67/u9oag-cl527.json"
-    );
-    return res.json();
+    const res = chayiClinic;
+    const datas = res.map((data) => {
+      return {
+        name: data["醫院名稱"],
+        address: data["住址"],
+        phone: data["電話"],
+      };
+    });
+    return datas;
   } catch (error) {
     console.log(error);
   }
@@ -71,14 +77,33 @@ export const getTainanClinic = async () => {
     const res = await fetch(
       "https://soa.tainan.gov.tw/Api/Service/GetJsonLd/f3baa10c-93ec-4bc5-b526-00959a5168ab"
     );
-    return res.json();
+    const resJ = await res.json();
+    const datas = resJ["@graph"].map((data) => {
+      const { Name } = data;
+      const name = getTitleWithSlice(Name);
+      return {
+        name,
+        address: "臺南市" + data.StreetDoorPlate,
+        phone: data["機構電話"],
+      };
+    });
+    return datas;
   } catch (error) {
     console.log(error);
   }
 };
 
-export const getMiaoliClinic = async () => {
+export const getMiaoliClinic = () => {
   try {
+    const res = miaoliClinic;
+    const datas = res.map((data) => {
+      return {
+        name: data["機構名稱"],
+        address: data["機構地址"],
+        phone: data["機構電話"],
+      };
+    });
+    return datas;
   } catch (error) {
     console.log(error);
   }

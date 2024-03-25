@@ -19,12 +19,18 @@ export default async function Home() {
   // initialized stray announced
   // const strayAnnounce = await getStrayAnnounce();
   // console.log(strayAnnounce);
-  // const taipeiClinic = await getTaipeiClinic();
+  // const taipeiClinic = getTaipeiClinic();
   // console.log(taipeiClinic);
-  // const newTaipeiClinic = await getNewTaipeiClinic();
+  // const newTaipeiClinic = getNewTaipeiClinic();
   // console.log(newTaipeiClinic);
   // const hsinchuClinic = await getHsinchuClinic();
   // console.log(hsinchuClinic);
+  // const chayiClinic = getChayiClinic();
+  // console.log(chayiClinic);
+  // const tainanClinic = await getTainanClinic();
+  // console.log(tainanClinic);
+  // const miaoliClinic = getMiaoliClinic();
+  // console.log(miaoliClinic);
 
   return <main>This is home page</main>;
 }
