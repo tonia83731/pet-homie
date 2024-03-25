@@ -1,0 +1,111 @@
+-- adoption
+-- vet
+-- statistics
+-- products
+
+
+寵物遺失啟事
+https://data.gov.tw/dataset/77682
+json:
+https://data.moa.gov.tw/Service/OpenData/TransService.aspx?UnitId=IFJomqVzyB0i
+
+
+動物認領養
+https://data.gov.tw/dataset/85903
+json:
+https://data.moa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL&IsTransData=1
+進階搜尋說明:
+file:///D:/User/Downloads/%E8%BE%B2%E6%A5%AD%E9%83%A8OpenData+API%E4%BB%8B%E6%8E%A5%E8%AA%AA%E6%98%8E%E6%9B%B8-EIR065%E5%8B%95%E7%89%A9%E8%AA%8D%E9%A0%98%E9%A4%8A-v1.1.pdf
+搜尋項目:
+動物所屬縣市代碼(animal_area_pkid), 動物的類型(animal_kind), 動物性別(animal_sex)[M | F | N]（公、母、未輸入）, 動物體型(animal_bodytype)[SMALL | MEDIUM | BIG]（小型、中型、大型）, 動物年紀(animal_age) [CHILD | ADULT]（幼年、成年）, 是否絕育(animal_sterilization) [T | F | N]（是、否、未輸入）,
+是否施打狂犬病疫苗(animal_bacterin)[T | F | N]（是、否、未輸入）, 動物狀態(animal_status) [NONE | OPEN | ADOPTED | OTHER | DEAD]（未公告、開放認養、已認養、其他、死亡）, 
+初始設定:
+https://data.moa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL&$filter=animal_status=OPEN
+
+
+全國公立動物收容所收容處理情形統計表(細項)
+https://data.gov.tw/dataset/73396
+全國公立動物收容所收容處理情形統計表
+https://data.gov.tw/dataset/41236
+json:
+https://data.moa.gov.tw/Service/OpenData/TransService.aspx?UnitId=p9yPwrCs2OtC&IsTransData=1
+
+進階搜尋說明: file:///D:/User/Downloads/%E8%BE%B2%E6%A5%AD%E9%83%A8OpenData+API%E4%BB%8B%E6%8E%A5%E8%AA%AA%E6%98%8E%E6%9B%B8-EIR334%E5%85%A8%E5%9C%8B%E5%85%AC%E7%AB%8B%E5%8B%95%E7%89%A9%E6%94%B6%E5%AE%B9%E6%89%80%E6%94%B6%E5%AE%B9%E8%99%95%E7%90%86%E6%83%85%E5%BD%A2%E7%B5%B1%E8%A8%88%E8%A1%A8-v1.0.pdf
+
+---> 可搜尋項目: 年度(rpt_year), 月份(rpt_month) ,縣市代碼(rpt_country_code)or縣市名(rpt_country)
+---> 可分類項目: 
+1. 可留容犬最大值(max_stay_dog_num), 可留容貓最大值(max_stay_cat_num)
+2-1. 在養數(前月底統計數據): 收容所(fs_gg_num), 委託代養(fs_ms_num) >>> 小計(fs_sum_num)
+2-2. 在養數(本月底統計數據): 收容所(fe_gg_num), 委託代養(fe_ms_num) >>> 小計(fe_sum_num)
+3. 犬_在養占可留容比例(end_dog_max_percent), 貓_在養占可留容比例(end_cat_max_percent)
+4. 入所(方法): 政府捕捉(in_gg_num), 拾獲送交(in_ms_num), 不擬續養(in_lv_num), 認養退回(in_bk_num), 動物救援(in_re_num), 依法沒入(in_lw_num), 其他(in_els_num) >>> 合計(in_tot_num) 
+5. 走失領回(out_tback_num), 領養: 個人認養(out_ad_ca_num), 民間犬場(out_ad_fa_num), 動保團體(out_ad_cv_num)
+6. 所內死亡: 疾病死亡(out_sd_num), 生理耗弱死亡(out_jd_num)
+7. 出所: 原地釋放(out_rl_num), 逃脫(out_ec_num), 其他(out_el_num) >>> 合計(out_tot_num)
+8. 法令出所(死亡): 動保法第 12 條第 1 項第 3 款(out_hs_3_num), 動保法第 12 條第 1 項第 5 款(out_hs_5_num), 動保法第 12 條第 1 項第 7 款(out_hs_7_num), 其他法令授權(out_hs_ot_num)
+12-1-3: 為肉用、皮毛用，或餵飼其他動物之經濟利用目的
+12-1-5: 為解除動物傷病之痛苦
+12-1-7: 收容於動物收容處所或直轄市、縣（市）主管機關指定之場所，經獸醫師檢查患有法定傳染病、重病無法治癒、嚴重影響環境衛生之動物或其他緊急狀況，嚴重影響人畜健康或公共安全。
+
+
+(沒有資料)
+104年全國公立動物收容所收容處理情形統計表
+https://data.gov.tw/dataset/25623
+103年全國公立動物收容所收容處理情形統計表
+https://data.gov.tw/dataset/25621
+102年全國公立動物收容所收容處理情形統計表
+https://data.gov.tw/dataset/25613
+101年全國公立動物收容所收容處理情形統計表
+https://data.gov.tw/dataset/25612
+100年全國公立動物收容所收容處理情形統計表
+https://data.gov.tw/dataset/25610
+99年全國公立動物收容所收容處理情形統計表
+https://data.gov.tw/dataset/25609
+98年全國公立動物收容所收容處理情形統計表
+https://data.gov.tw/dataset/25608
+97年全國公立動物收容所收容處理情形統計表
+https://data.gov.tw/dataset/25607
+// ------------------------------------------------
+
+臺北市動物醫院資料
+https://data.gov.tw/dataset/128275
+https://s5.aconvert.com/convert/p3r68-cdx67/31gta-wgldt.json
+新北市動物醫院一覽表
+https://data.gov.tw/dataset/126160
+https://s5.aconvert.com/convert/p3r68-cdx67/89qht-g6gow.json
+新竹市動物醫院
+https://data.gov.tw/dataset/67728
+https://odws.hccg.gov.tw/001/Upload/25/opendataback/9059/120/35ee3431-7188-437b-8278-e7ad9cb31d4b.json
+X 新竹縣獸醫診療機構名冊
+https://data.gov.tw/dataset/109742
+嘉義市動物醫院名單
+https://data.gov.tw/dataset/52406
+https://s5.aconvert.com/convert/p3r68-cdx67/u9oag-cl527.json
+臺南市動物醫院及診所名單
+https://data.gov.tw/dataset/53916
+https://soa.tainan.gov.tw/Api/Service/GetJsonLd/f3baa10c-93ec-4bc5-b526-00959a5168ab
+苗栗縣合法動物醫院名冊
+https://data.gov.tw/dataset/156738
+
+
+React Table (Tutorial)
+https://www.youtube.com/watch?v=CjqG277Hmgg
+
+Design Example
+https://www.pinterest.com/pin/297870962865871969/
+https://www.pinterest.com/pin/575686764879195075/
+https://www.pinterest.com/pin/137711701097210460/
+https://www.pinterest.com/pin/251146116751235872/
+https://www.pinterest.com/pin/1068619817819923268/
+https://www.pinterest.com/pin/512003051398209318/
+https://www.pinterest.com/pin/649433208779545686/
+
+
+Color Theme
+https://www.pinterest.com/pin/14355292553126298/
+https://www.pinterest.com/pin/576883033526681900/
+https://www.pinterest.com/pin/1337074887341144/
+
+
+Could Use Pic
+https://www.pinterest.com/pin/774124928725129/
