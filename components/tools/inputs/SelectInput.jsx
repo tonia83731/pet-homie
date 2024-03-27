@@ -1,12 +1,11 @@
 import Select from "react-select";
+import InputLabel from "./InputLabel";
 
 export default function SelectInput(props) {
   const { label, options, placeholder } = props;
   return (
     <div className="">
-      <label htmlFor="" className="">
-        {label}
-      </label>
+      <InputLabel title={label} />
       <Select
         isClearable
         options={options}

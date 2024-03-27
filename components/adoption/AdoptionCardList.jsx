@@ -1,15 +1,12 @@
 import AdoptionCardItem from "./AdoptionCardItem";
 
-export default function AdoptionCardList() {
-  // initialized adoption data
-  // const allAdoption = await getAllAdoptData(20, 0);
-  // console.log(allAdoption);
-
+export default function AdoptionCardList(props) {
+  const { adoptionData } = props;
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">
-      <AdoptionCardItem />
-      <AdoptionCardItem />
-      <AdoptionCardItem />
+      {adoptionData.map((prop) => {
+        return <AdoptionCardItem key={prop.animal_id} prop={prop} />;
+      })}
     </div>
   );
 }
