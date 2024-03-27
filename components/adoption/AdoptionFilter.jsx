@@ -95,11 +95,9 @@ export default function AdoptionFilter() {
       </div>
       <div className="mt-4">
         <div className="grid grid-cols-2 gap-4">
-          <button className="bg-dark-primary text-white rounded-md py-1">
-            搜尋
-          </button>
+          <button className="bg-indigo text-white rounded-md py-1">搜尋</button>
           <button
-            className="bg-slate-400 text-white rounded-md py-1"
+            className="bg-blueberry-40 text-white rounded-md py-1"
             onClick={clearCheckCondition}
           >
             清除

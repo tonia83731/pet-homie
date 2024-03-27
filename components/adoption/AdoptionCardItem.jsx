@@ -63,7 +63,7 @@ export default function AdoptionCardItem(prop) {
           <div className="w-full mt-2">
             <Link
               href="/shelter_and_clinic/shelter/contact-form"
-              className="py-1 px-4 w-full rounded-full text-white text-center bg-light-secondary block"
+              className="py-1 px-4 w-full rounded-full text-white text-center bg-mustard block"
             >
               我要詢問
             </Link>
@@ -79,10 +79,12 @@ export default function AdoptionCardItem(prop) {
                 {animal_sex_options.map((data, index) => {
                   return (
                     <span
-                      className={`${index !== 0 ? "border-l" : ""} ${
+                      className={`${
+                        index !== 0 ? "border-l border-blueberry-40" : ""
+                      } ${
                         data.value === animal_sex
-                          ? "bg-light-additional"
-                          : "bg-white"
+                          ? "bg-sky"
+                          : "bg-white text-blueberry-40"
                       }`}
                       key={data.value}
                     >
@@ -97,8 +99,8 @@ export default function AdoptionCardItem(prop) {
                     <span
                       className={`${index !== 0 ? "border-l" : ""} ${
                         data.value === animal_age
-                          ? "bg-light-additional"
-                          : "bg-white"
+                          ? "bg-sky"
+                          : "bg-white text-blueberry-40"
                       }`}
                       key={data.value}
                     >
@@ -112,7 +114,7 @@ export default function AdoptionCardItem(prop) {
           <div className="w-full mt-2">
             <Link
               href={`/shelter_and_clinic/shelter/adoption/${animal_id}`}
-              className="py-1 px-4 w-full rounded-full text-white text-center block bg-dark-secondary"
+              className="py-1 px-4 w-full rounded-full text-white text-center block bg-indigo"
             >
               了解更多
             </Link>

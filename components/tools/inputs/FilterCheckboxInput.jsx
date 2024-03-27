@@ -14,9 +14,9 @@ export default function FilterCheckboxInput(props) {
           const { label, value } = data;
           return (
             <div
-              className={`${index !== 0 ? "border-l" : ""} ${
-                isChecked[index] ? "bg-light-additional" : ""
-              }`}
+              className={`${
+                index !== 0 ? "border-l border-blueberry-40" : ""
+              } ${isChecked[index] ? "bg-pink" : ""}`}
               key={value}
             >
               <input

@@ -27,5 +27,9 @@ export default async function AdoptionDetailPage({ params }) {
     animal_closeddate,
   } = data;
 
-  return <div className=""></div>;
+  return (
+    <div className="">
+      <div className=""></div>
+    </div>
+  );
 }
