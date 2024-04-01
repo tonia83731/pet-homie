@@ -1,4 +1,4 @@
-export default function SubTitle() {
+export default function SubTitle(props) {
   const { title, className = "" } = props;
-  return <h3 className={`text-xl font-bold ${className}`}>{title}</h3>;
+  return <h3 className={`text-xl font-bold mb-4 ${className}`}>{title}</h3>;
 }

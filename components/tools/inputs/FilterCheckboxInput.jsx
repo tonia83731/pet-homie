@@ -14,9 +14,13 @@ export default function FilterCheckboxInput(props) {
           const { label, value } = data;
           return (
             <div
-              className={`${
+              className={`py-2 text-slate-300 ${
                 index !== 0 ? "border-l border-blueberry-40" : ""
-              } ${isChecked[index] ? "bg-pink" : ""}`}
+              } ${
+                isChecked[index]
+                  ? "bg-grandpa-orange text-dark-green font-medium"
+                  : ""
+              }`}
               key={value}
             >
               <input
@@ -26,7 +30,12 @@ export default function FilterCheckboxInput(props) {
                 checked={isChecked[index]}
                 onChange={() => onFilterChange(type, index)}
               />
-              <label htmlFor={value} className={`cursor-pointer`}>
+              <label
+                htmlFor={value}
+                className={`cursor-pointer ${
+                  isChecked[index] ? "text-dark-green font-medium" : ""
+                }`}
+              >
                 {label}
               </label>
             </div>

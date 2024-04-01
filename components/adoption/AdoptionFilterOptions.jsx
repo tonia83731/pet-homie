@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import SelectInput from "../tools/inputs/SelectInput";
 import FilterCheckboxInput from "../tools/inputs/FilterCheckboxInput";
@@ -10,8 +8,9 @@ import {
   animal_bodytype_options,
   animal_age_options,
 } from "@/helpers/getAdoptionFilterData";
+import SubTitle from "../tools/title/SubTitle";
 
-export default function AdoptionFilter() {
+export default function AdoptionFilterOptions() {
   const areaOptions = getAreaCode();
   const [kind, setKind] = useState(
     new Array(animal_kind_options.length).fill(false)
@@ -62,8 +61,9 @@ export default function AdoptionFilter() {
   };
   return (
     <div className="drop-shadow-md rounded-md bg-white p-4 my-4">
-      <SelectInput label="地區" placeholder="地區" options={areaOptions} />
-      <div className="">
+      <SubTitle title="條件搜尋" />
+      <div className="flex flex-col gap-4">
+        <SelectInput label="地區" placeholder="地區" options={areaOptions} />
         <FilterCheckboxInput
           title="動物類型"
           options={animal_kind_options}
@@ -95,9 +95,11 @@ export default function AdoptionFilter() {
       </div>
       <div className="mt-4">
         <div className="grid grid-cols-2 gap-4">
-          <button className="bg-indigo text-white rounded-md py-1">搜尋</button>
+          <button className="bg-dark-green text-white rounded-md py-1">
+            搜尋
+          </button>
           <button
-            className="bg-blueberry-40 text-white rounded-md py-1"
+            className="bg-slate-300 text-white rounded-md py-1"
             onClick={clearCheckCondition}
           >
             清除

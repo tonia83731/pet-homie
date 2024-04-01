@@ -8,6 +8,12 @@ const nextConfig = {
         port: "",
         pathname: "/upload/pic/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.pet.gov.tw",
+        port: "",
+        pathname: "/XMLRequest/**",
+      },
     ],
   },
 };

@@ -1,3 +1,4 @@
+"use client";
 import {
   getTaipeiClinic,
   getNewTaipeiClinic,
@@ -6,23 +7,86 @@ import {
   getTainanClinic,
   getMiaoliClinic,
 } from "@/libs/getClinicData";
+import Select from "react-select";
+import { useState } from "react";
+import { getCityOptions } from "@/helpers/getCityFilterData";
+import MainTitle from "@/components/tools/title/MainTitle";
+import ClinicTable from "@/components/clinic/ClinicTable";
+import SearchInput from "@/components/tools/inputs/SearchInput";
 
-export default async function PetClinicPage() {
-  // const taipeiClinic = getTaipeiClinic();
-  // console.log(taipeiClinic);
-  // const newTaipeiClinic = getNewTaipeiClinic();
-  // console.log(newTaipeiClinic);
-  // const hsinchuClinic = await getHsinchuClinic();
-  // console.log(hsinchuClinic);
-  // const chayiClinic = getChayiClinic();
-  // console.log(chayiClinic);
-  // const tainanClinic = await getTainanClinic();
-  // console.log(tainanClinic);
-  // const miaoliClinic = getMiaoliClinic();
-  // console.log(miaoliClinic);
+export default function PetClinicPage() {
+  const [clinicData, setClinicData] = useState(getTaipeiClinic());
+  const [searchValue, setSearchValue] = useState("");
+  const options = getCityOptions();
+
+  const handleCityChange = async (option) => {
+    const value = option.value;
+    switch (value) {
+      case "臺北市":
+        const taipeiClinic = getTaipeiClinic();
+        setClinicData(taipeiClinic);
+        break;
+      case "新北市":
+        const newTaipeiClinic = getNewTaipeiClinic();
+        setClinicData(newTaipeiClinic);
+        break;
+      case "新竹市":
+        try {
+          const hsinchuClinic = await getHsinchuClinic();
+          setClinicData(hsinchuClinic);
+        } catch (error) {
+          console.log(error);
+        }
+        break;
+      case "嘉義市":
+        const chayiClinic = getChayiClinic();
+        setClinicData(chayiClinic);
+        break;
+      case "苗栗縣":
+        const miaoliClinic = getMiaoliClinic();
+        setClinicData(miaoliClinic);
+        break;
+      case "臺南市":
+        try {
+          const tainanClinic = await getTainanClinic();
+          setClinicData(tainanClinic);
+        } catch (error) {
+          console.log(error);
+        }
+        break;
+      default:
+        setClinicData([]);
+        break;
+    }
+  };
+  const handleSearchChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
   return (
     <main className="">
-      <h1 className="">This is pet clinic page</h1>
+      <MainTitle title="各縣市動物醫院" />
+      <Select
+        options={options}
+        defaultValue={options[1]}
+        onChange={(option) => handleCityChange(option)}
+      />
+      {clinicData.length > 0 ? (
+        <div className="flex gap-2 items-center mt-2">
+          <SearchInput
+            inputValue={searchValue}
+            onSearchChange={handleSearchChange}
+          />
+          <button className="rounded bg-dark-green text-white h-full px-4 py-2">
+            搜尋
+          </button>
+        </div>
+      ) : (
+        ""
+      )}
+      <div className="my-2">
+        <ClinicTable tableData={clinicData} />
+      </div>
     </main>
   );
 }

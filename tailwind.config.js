@@ -13,26 +13,20 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        blueberry: {
-          100: "rgb(107, 122, 143)",
-          80: "rgb(107, 122, 143, .8)",
-          60: "rgb(107, 122, 143, .6)",
-          40: "rgb(107, 122, 143, .4)",
-          0: "rgb(107, 122, 143, .2)",
-        },
-        sky: "#94CEC6",
-        indigo: "#3B4A95",
-        mustard: "#E2AA4B",
-        pink: "#DC929C",
-        brick: "#E2664A",
+        "brightly-orange": "#f43a09",
+        "grandpa-orange": "#ffb766",
+        "grandpa-orange-25": "rgb(255, 183, 102, .25)",
+        "grey-blue-green": "#c2edda",
+        "live-green": "#68d388",
+        "live-green-25": "rgb(104, 211, 136, .25)",
+        "dark-green": "#032d36",
+        "tiffany-green": "#08b6a6",
+        mustard: "#f8961d",
+        "sky-blue": "#7ABEDB",
         black: {
           100: "#333333",
-          80: "rgb(51, 51, 51, .8)",
-          60: "rgb(51, 51, 51, .6)",
-          40: "rgb(51, 51, 51, .4)",
-          20: "rgb(51, 51, 51, .2)",
+          75: "rgb(51, 51, 51, .75)",
         },
-        "custom-white": "#f5f5f5",
       },
       screens: {
         xs: "560px",
@@ -41,3 +35,6 @@ module.exports = {
   },
   plugins: [],
 };
+
+// source: https://hookagency.com/blog/website-color-schemes-2020/
+// source: https://www.pinterest.com/pin/575686764879195075/
