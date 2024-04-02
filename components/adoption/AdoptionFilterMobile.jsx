@@ -5,6 +5,7 @@ import Select from "react-select";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { colourStyles } from "@/app/shelter_and_clinic/clinic/page";
 
 export default function AdoptionFilterMobile() {
   const options = [
@@ -23,6 +24,7 @@ export default function AdoptionFilterMobile() {
           <div className="w-full col-span-3">
             <Select
               options={options}
+              styles={colourStyles}
               defaultValue={selectNum}
               onChange={setSelectNum}
             />

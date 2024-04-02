@@ -14,6 +14,35 @@ import MainTitle from "@/components/tools/title/MainTitle";
 import ClinicTable from "@/components/clinic/ClinicTable";
 import SearchInput from "@/components/tools/inputs/SearchInput";
 
+export const colourStyles = {
+  control: (styles, { isFocused }) => ({
+    ...styles,
+    height: "2.5rem",
+    paddingLeft: "1rem",
+    borderRadius: "0.125rem",
+    // paddingRight: "1rem",
+    borderColor: isFocused ? "#68d388" : "rgb(3, 45, 54, .25)",
+    outline: "none",
+    boxShadow: "none",
+    "&:hover": {
+      borderColor: "#68d388",
+    },
+  }),
+  indicatorSeparator: (styles) => ({ display: "none" }),
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    return {
+      ...styles,
+
+      height: "2.5rem",
+      paddingLeft: "1rem",
+      backgroundColor: isSelected ? "#68d388" : "white",
+      "&:hover": {
+        backgroundColor: "rgb(104, 211, 136, .25)",
+      },
+    };
+  },
+};
+
 export default function PetClinicPage() {
   const [clinicData, setClinicData] = useState(getTaipeiClinic());
   const [searchValue, setSearchValue] = useState("");
@@ -30,14 +59,14 @@ export default function PetClinicPage() {
         const newTaipeiClinic = getNewTaipeiClinic();
         setClinicData(newTaipeiClinic);
         break;
-      case "新竹市":
-        try {
-          const hsinchuClinic = await getHsinchuClinic();
-          setClinicData(hsinchuClinic);
-        } catch (error) {
-          console.log(error);
-        }
-        break;
+      // case "新竹市":
+      //   try {
+      //     const hsinchuClinic = await getHsinchuClinic();
+      //     setClinicData(hsinchuClinic);
+      //   } catch (error) {
+      //     console.log(error);
+      //   }
+      //   break;
       case "嘉義市":
         const chayiClinic = getChayiClinic();
         setClinicData(chayiClinic);
@@ -66,24 +95,27 @@ export default function PetClinicPage() {
   return (
     <main className="">
       <MainTitle title="各縣市動物醫院" />
-      <Select
-        options={options}
-        defaultValue={options[1]}
-        onChange={(option) => handleCityChange(option)}
-      />
-      {clinicData.length > 0 ? (
-        <div className="flex gap-2 items-center mt-2">
-          <SearchInput
-            inputValue={searchValue}
-            onSearchChange={handleSearchChange}
-          />
-          <button className="rounded bg-dark-green text-white h-full px-4 py-2">
-            搜尋
-          </button>
-        </div>
-      ) : (
-        ""
-      )}
+      <div className="lg:flex lg:justify-between lg:items-center">
+        <Select
+          options={options}
+          styles={colourStyles}
+          defaultValue={options[1]}
+          onChange={(option) => handleCityChange(option)}
+        />
+        {clinicData.length > 0 ? (
+          <div className="grid grid-cols-5 gap-2 items-center mt-2">
+            <SearchInput
+              inputValue={searchValue}
+              onSearchChange={handleSearchChange}
+            />
+            <button className="rounded bg-dark-green text-white h-10 px-4 py-2">
+              搜尋
+            </button>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
       <div className="my-2">
         <ClinicTable tableData={clinicData} />
       </div>

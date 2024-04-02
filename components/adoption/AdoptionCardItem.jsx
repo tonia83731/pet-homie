@@ -122,7 +122,7 @@ export default function AdoptionCardItem(prop) {
         </div>
         <div className="grid grid-cols-2 gap-4">
           <Link
-            href="/shelter_and_clinic/shelter/contact-form"
+            href={`/shelter_and_clinic/shelter/adoption/${animal_id}/contactform`}
             className="py-1 px-4 w-full rounded-full text-white text-center bg-dark-green block"
           >
             我要詢問

@@ -1,10 +1,10 @@
 export default function SearchCodeInput(props) {
   const { inputValue, onSearchCodeChange } = props;
   return (
-    <div className="mb-4">
+    <div className="col-span-4 w-full h-10">
       <input
         type="text"
-        className="border border-slate-300 px-4 py-2 rounded-md focus:border-live-green"
+        className="w-full h-full border border-dark-green-25 px-4 py-2 rounded-sm focus:border-live-green"
         placeholder="請輸入晶片號碼"
         value={inputValue}
         onChange={(e) => onSearchCodeChange(e)}

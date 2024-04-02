@@ -20,7 +20,9 @@ module.exports = {
         "live-green": "#68d388",
         "live-green-25": "rgb(104, 211, 136, .25)",
         "dark-green": "#032d36",
+        "dark-green-25": "rgb(3, 45, 54, .25)",
         "tiffany-green": "#08b6a6",
+        "tiffany-green-25": "rgb(8, 182, 166, .25)",
         mustard: "#f8961d",
         "sky-blue": "#7ABEDB",
         black: {

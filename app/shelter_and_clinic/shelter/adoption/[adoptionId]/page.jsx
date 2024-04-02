@@ -111,7 +111,7 @@ export default async function AdoptionDetailPage({ params }) {
                 <a href={`tel:${shelter_tel}`}>{shelter_tel}</a>
               </div>
               <Link
-                href="/shelter_and_clinic/shelter/contact-form"
+                href={`/shelter_and_clinic/shelter/adoption/${animal_id}/contactform`}
                 className="py-1 px-4 w-full rounded-full text-white text-center bg-mustard block"
               >
                 我要詢問

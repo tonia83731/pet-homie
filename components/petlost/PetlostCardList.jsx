@@ -8,6 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale } from "react-datepicker";
 import zhTW from "date-fns/locale/zh-TW";
 import { useState } from "react";
+import { colourStyles } from "@/app/shelter_and_clinic/clinic/page";
 
 registerLocale("zh-TW", zhTW);
 
@@ -24,46 +25,50 @@ export default function PetlostCardList(props) {
   //   console.log(selectValue.value);
   return (
     <>
-      <div className="flex gap-4 justify-end ">
+      <div className="flex flex-col gap-4 h-10 mb-20 lg:mb-10 lg:flex-row lg:justify-end">
         <Select
           options={options}
           defaultValue={selectValue}
-          //   className="h-full"
+          styles={colourStyles}
           onChange={(e) => {
             setSelectValue(e);
           }}
         />
-        {selectValue?.value === "晶片號碼" ? (
-          <SearchCodeInput
-            inputValue={searchValue}
-            onSearchValue={(e) => {
-              setSearchValue(e.target.value);
-            }}
-          />
-        ) : (
-          <DatePicker
-            //   showIcon
-            //   showMonthYearPicker
-            showYearDropdown
-            showMonthDropdown
-            selected={selectDate}
-            maxDate={new Date()}
-            dateFormat="yyyy/MM/dd"
-            locale="zh-TW"
-            placeholderText="選擇日期"
-            onChange={(dates) => {
-              setSelectDate(dates);
-            }}
-            className="w-full h-12 border border-slate-300 rounded py-1 px-4 placeholder:text-slate-300 focus:shadow-outline focus:outline-slate-500"
-            //   wrapperClassName="w-5/12"
-          />
-        )}
-        <button
-          className="bg-dark-green text-white rounded-md px-4 py-2 hover:shadow-md"
-          onClick={handleSearchClick}
-        >
-          搜尋
-        </button>
+        <div className="grid grid-cols-5 gap-2">
+          {selectValue?.value === "晶片號碼" ? (
+            <SearchCodeInput
+              inputValue={searchValue}
+              onSearchValue={(e) => {
+                setSearchValue(e.target.value);
+              }}
+            />
+          ) : (
+            <div className="col-span-4 w-full h-10">
+              <DatePicker
+                //   showIcon
+                //   showMonthYearPicker
+                showYearDropdown
+                showMonthDropdown
+                selected={selectDate}
+                maxDate={new Date()}
+                dateFormat="yyyy/MM/dd"
+                locale="zh-TW"
+                placeholderText="選擇日期"
+                onChange={(dates) => {
+                  setSelectDate(dates);
+                }}
+                className="w-full h-full border border-dark-green-25 px-4 py-2 rounded-sm focus:border-live-green placeholder:text-dark-green-25"
+                wrapperClassName="w-full h-full"
+              />
+            </div>
+          )}
+          <button
+            className="h-10 bg-dark-green text-white rounded-md px-4 py-2 hover:shadow-md"
+            onClick={handleSearchClick}
+          >
+            搜尋
+          </button>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {petlostData.map((prop) => {

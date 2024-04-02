@@ -3,6 +3,7 @@
 import AdoptionFilterOptions from "./AdoptionFilterOptions";
 import Select from "react-select";
 import { useState } from "react";
+import { colourStyles } from "@/app/shelter_and_clinic/clinic/page";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,6 +24,7 @@ export default function AdoptionFilterDesktop() {
           <div className="w-full col-span-3">
             <Select
               options={options}
+              styles={colourStyles}
               defaultValue={selectNum}
               onChange={setSelectNum}
             />
