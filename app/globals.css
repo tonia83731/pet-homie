@@ -31,6 +31,6 @@ body {
 }
 
 /* input settings */
-input {
+input, textarea {
   outline: none;
 }

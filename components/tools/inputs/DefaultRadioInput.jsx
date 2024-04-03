@@ -33,12 +33,12 @@ export default function DefaultRadioInput(props) {
                 type="radio"
                 className="hidden"
                 name={name}
-                id={value}
+                id={`${name}-${value}`}
                 value={value}
                 checked={isChecked === value}
                 onChange={() => onRadioInputChange(value)}
               />
-              <label htmlFor={value} className="">
+              <label htmlFor={`${name}-${value}`} className="">
                 {label}
               </label>
             </div>

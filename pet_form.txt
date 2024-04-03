@@ -23,7 +23,7 @@
 16. 是否願意接受指導? radio
 17. 為何想要領養狗狗? textarea
 18. 狗每天需要獨處幾個小時? number
-19. 白天的生活空間? 晚上活動空間? checkbox
+19. 白天的生活空間? 晚上活動空間? checkbox (X)
 20. 其他問題 textarea
 
 

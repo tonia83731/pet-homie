@@ -31,7 +31,7 @@ export default function ContactStep1(props) {
 
   return (
     <ContactFormLayout title="領養人基本資料">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 lg:h-[540px] lg:max-h-xl">
         <DefaultInput
           id="name"
           name="name"
@@ -48,7 +48,7 @@ export default function ContactStep1(props) {
             }));
           }}
         />
-        <div className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4">
           <SelectInput
             options={genders}
             label="性別"
