@@ -2,7 +2,7 @@ import Contact from "@/components/contactform/Contact";
 import MainTitle from "@/components/tools/title/MainTitle";
 import { getAdoptDataByAnimalId } from "@/libs/getAdoptData";
 
-export default async function ContactForm({ params }) {
+export default async function ContactFormPage({ params }) {
   const { adoptionId } = params;
   const numId = +adoptionId;
   const data = await getAdoptDataByAnimalId(numId);

@@ -1,10 +1,11 @@
 "use client";
-import ContactStep1 from "./ContactStep1";
+import ContactForm from "./ContactForm";
+import { ContactFormContextProvider } from "@/context/ContactFormContext";
 
 export default function Contact() {
   return (
-    <form action="" className="">
-      <ContactStep1 />
-    </form>
+    <ContactFormContextProvider>
+      <ContactForm />
+    </ContactFormContextProvider>
   );
 }

@@ -2,21 +2,36 @@ import DefaultInput from "../tools/inputs/DefaultInput";
 import SelectInput from "../tools/inputs/SelectInput";
 import SubTitle from "../tools/title/SubTitle";
 import InputLabel from "../tools/inputs/InputLabel";
-import { genders } from "@/helpers/getContactFormData";
+import { genders, incomes } from "@/helpers/getContactFormData";
 import {
   getCityOptions,
   getDistrictOptions,
 } from "@/helpers/getCityFilterData";
+import ControlBtnLayout from "./ControlBtnLayout";
 import { useState } from "react";
-
-export default function ContactStep1() {
+import { useContactFormContext } from "@/context/ContactFormContext";
+import ContactFormLayout from "./ContactFormLayout";
+import DefaultRadioInput from "../tools/inputs/DefaultRadioInput";
+import { yes_and_no } from "@/helpers/getContactFormData";
+export default function ContactStep1(props) {
+  const { formData, setFormData } = useContactFormContext();
+  const { personal } = formData;
+  const {
+    name,
+    gender,
+    age,
+    address,
+    email,
+    phone,
+    occupation,
+    income,
+    change,
+  } = personal;
+  const { onNextPageClick } = props;
   const [districts, setDistricts] = useState([]);
   return (
-    <div className="">
-      <div className="">
-        <SubTitle title="領養人基本資料" className="text-live-green" />
-      </div>
-      <div className="">
+    <ContactFormLayout title="領養人基本資料">
+      <div className="flex flex-col gap-4">
         <DefaultInput
           id="name"
           name="name"
@@ -78,18 +93,41 @@ export default function ContactStep1() {
             placeholder="請輸入職業"
           />
           {/* consider to use select */}
-          <DefaultInput
-            id="income"
-            name="income"
-            type="number"
-            label="收入情況"
-            placeholder="請輸入收入情況"
+          <SelectInput
+            label="年收入情況"
+            placeholder="收入情況"
+            options={incomes}
+            // onSelectionchange={(option) => {
+            //   const district = getDistrictOptions(option.value);
+            //   setDistricts(district);
+            // }}
           />
         </div>
+        <DefaultRadioInput
+          title="未來6 個月內會有任何較大的變化嗎(例如: 搬家、換工作、生孩子、長期旅行...)"
+          options={yes_and_no}
+          name="change"
+          isChecked={change}
+          onRadioInputChange={(value) =>
+            setFormData((prevState) => ({
+              ...prevState,
+              personal: {
+                ...prevState.personal,
+                change: value,
+              },
+            }))
+          }
+        />
       </div>
-      <div className="">
-        <button className="">下一頁</button>
-      </div>
-    </div>
+      <ControlBtnLayout>
+        <button
+          type="button"
+          className="col-start-4 rounded bg-brightly-orange text-white h-10 px-4 py-2"
+          onClick={onNextPageClick}
+        >
+          下一頁
+        </button>
+      </ControlBtnLayout>
+    </ContactFormLayout>
   );
 }

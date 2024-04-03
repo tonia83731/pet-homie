@@ -1,3 +1,5 @@
+import ContactFormLayout from "./ContactFormLayout";
+
 export default function ContactStep2() {
-  return <div className=""></div>;
+  return <ContactFormLayout title="領養人居住情形"></ContactFormLayout>;
 }
