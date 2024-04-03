@@ -77,7 +77,6 @@ export default function ContactStep2(props) {
             }))
           }
         />
-        {/* add 可以帶狗去的戶外區域? */}
         <div className="">
           <InputLabel title="寵物戶外區域" />
           <div className="grid grid-cols-2 gap-2">
