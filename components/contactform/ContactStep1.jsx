@@ -28,7 +28,7 @@ export default function ContactStep1(props) {
   } = personal;
   const { onNextPageClick } = props;
   const [districts, setDistricts] = useState([]);
-  console.log(formData);
+
   return (
     <ContactFormLayout title="領養人基本資料">
       <div className="flex flex-col gap-4">
@@ -48,7 +48,7 @@ export default function ContactStep1(props) {
             }));
           }}
         />
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-4">
           <SelectInput
             options={genders}
             label="性別"
@@ -138,7 +138,7 @@ export default function ContactStep1(props) {
             }}
           />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-4">
           <DefaultInput
             id="email"
             name="email"
@@ -174,7 +174,7 @@ export default function ContactStep1(props) {
             }}
           />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-4">
           <DefaultInput
             id="occupation"
             name="occupation"

@@ -7,7 +7,8 @@ import InputLabel from "../tools/inputs/InputLabel";
 import { useContactFormContext } from "@/context/ContactFormContext";
 import { yes_and_no } from "@/helpers/getContactFormData";
 
-export default function ContactStep2() {
+export default function ContactStep2(props) {
+  const { onPrevPageClick, onNextPageClick } = props;
   return (
     <ContactFormLayout title="領養人居住情形">
       <ControlBtnLayout>

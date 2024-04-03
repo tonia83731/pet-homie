@@ -24,7 +24,12 @@ export default function ContactForm() {
           />
         );
       case FORM_STATE.PetExperience:
-        return <ContactStep3 />;
+        return (
+          <ContactStep3
+            onPrevPageClick={() => setFormState(FORM_STATE.LivingCondition)}
+            // onNextPageClick={() => setFormState(FORM_STATE.PetExperience)}
+          />
+        );
       default:
         return null;
     }
